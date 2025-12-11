@@ -1,0 +1,27 @@
+{
+  "name": "universal-selection",
+  "version": "0.1.4",
+  "description": "Universal file selection getter for Raycast extensions",
+  "type": "module",
+  "main": "src/index.js",
+  "types": "src/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./src/index.d.ts",
+      "default": "./src/index.js"
+    }
+  },
+  "keywords": [
+    "raycast",
+    "finder",
+    "file-selection"
+  ],
+  "dependencies": {
+  },
+  "peerDependencies": {
+    "@raycast/api": "^1.103.10",
+    "@raycast/utils": "^1.17.0"
+  },
+  "devDependencies": {
+  }
+}
