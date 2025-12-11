@@ -4,30 +4,13 @@ A universal file selection getter for Raycast extensions. Automatically detects 
 
 ## Features
 
-- 🎯 Automatic detection of active file manager
-- 📁 Support for multiple file managers:
-  - **Finder** - macOS default file manager
-  - **Bloom** - Modern file manager
-- 🔧 Easy integration with Raycast extensions
-- 📦 Zero dependencies (peer dependencies only)
+- Support for multiple file managers
+- Easy integration with Raycast extensions
 
 ## Installation
 
 ```bash
 npm install universal-selection
-```
-
-## Peer Dependencies
-
-Make sure you have these installed in your Raycast extension:
-
-```json
-{
-  "dependencies": {
-    "@raycast/api": "^1.103.10",
-    "@raycast/utils": "^1.17.0"
-  }
-}
 ```
 
 ## Usage
