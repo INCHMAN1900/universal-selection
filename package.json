@@ -5,6 +5,7 @@
   "type": "module",
   "main": "src/index.js",
   "types": "src/index.d.ts",
+  "license": "MIT",
   "exports": {
     ".": {
       "types": "./src/index.d.ts",
