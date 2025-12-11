@@ -1,6 +1,8 @@
 import { getFrontmostApplication } from "@raycast/api";
 import { getFinderSelection } from "./apps/finder.js";
 import { getBloomSelection } from "./apps/bloom.js";
+import { getQSpaceSelection } from "./apps/qspace.js";
+import { getPathFinderSelection } from "./apps/path-finder.js";
 
 /**
  * Get selected files from the frontmost file manager application.
@@ -28,6 +30,12 @@ export async function getSelectedFiles() {
       return getFinderSelection();
     case "com.asiafu.Bloom":
       return getBloomSelection();
+    case "com.jinghaoshe.qspace.pro":
+      return getQSpaceSelection("QSpace Pro");
+    case "com.jinghaoshe.qspace":
+      return getQSpaceSelection("QSpace");
+    case "com.cocoatech.PathFinder":
+      return getPathFinderSelection();
     default:
       throw new Error(`Unsupported application: ${app.name} (${bundleId})`);
   }

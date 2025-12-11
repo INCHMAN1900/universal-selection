@@ -63,6 +63,8 @@ Returns a promise that resolves to an array of selected file paths.
 |------------|-----------|--------|
 | Finder | `com.apple.finder` | ✅ Supported |
 | Bloom | `com.asiafu.Bloom` | ✅ Supported |
+| QSpace | `com.jinghaoshe.qspace(.pro)` | ✅ Supported |
+| Path Finder | `com.cocoatech.PathFinder` | ✅ Supported |
 
 Want to add support for more file managers? [Open an issue](https://github.com/yourusername/universal-selection/issues) or submit a pull request!
 
