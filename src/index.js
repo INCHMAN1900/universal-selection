@@ -38,6 +38,6 @@ export async function getSelectedItems() {
     case "com.cocoatech.PathFinder":
       return getPathFinderSelection();
     default:
-      throw new Error(`Unsupported application: ${app.name} (${bundleId})`);
+      throw new Error(`Unable to get selected items from ${app.name}`);
   }
 }
