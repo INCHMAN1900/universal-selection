@@ -15,10 +15,10 @@ import { getPathFinderSelection } from "./apps/path-finder.js";
  * @throws {Error} If the frontmost application is not supported
  * 
  * @example
- * const files = await getSelectedFiles();
+ * const files = await getSelectedItems();
  * console.log(files); // [{ path: "/Users/username/Documents/file.txt" }]
  */
-export async function getSelectedFiles() {
+export async function getSelectedItems() {
   const app = await getFrontmostApplication();
   const bundleId = app.bundleId;
 

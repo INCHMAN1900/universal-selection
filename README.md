@@ -17,12 +17,12 @@ npm install universal-selection
 ## Usage
 
 ```javascript
-import { getSelectedFiles } from "universal-selection";
+import { getSelectedItems } from "universal-selection";
 import { showToast, Toast } from "@raycast/api";
 
 export default async function Command() {
   try {
-    const files = await getSelectedFiles();
+    const files = await getSelectedItems();
     
     if (files.length === 0) {
       await showToast({
@@ -52,7 +52,7 @@ export default async function Command() {
 
 ## API
 
-### `getSelectedFiles()`
+### `getSelectedItems()`
 
 Returns a promise that resolves to an array of file system items.
 
@@ -64,7 +64,7 @@ Returns a promise that resolves to an array of file system items.
 
 **Example:**
 ```javascript
-const files = await getSelectedFiles();
+const files = await getSelectedItems();
 // [{ path: "/path/to/file1.txt" }, { path: "/path/to/file2.png" }]
 
 // Access file paths

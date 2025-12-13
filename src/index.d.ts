@@ -15,10 +15,10 @@ import { FileSystemItem } from "@raycast/api";
  * 
  * @example
  * ```typescript
- * import { getSelectedFiles } from "universal-selection";
+ * import { getSelectedItems } from "universal-selection";
  * 
- * const files = await getSelectedFiles();
+ * const files = await getSelectedItems();
  * console.log(files); // [{ path: "/path/to/file1.txt" }, { path: "/path/to/file2.png" }]
  * ```
  */
-export function getSelectedFiles(): Promise<FileSystemItem[]>;
+export function getSelectedItems(): Promise<FileSystemItem[]>;
