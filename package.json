@@ -1,11 +1,19 @@
 {
   "name": "universal-selection",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Universal file selection getter for Raycast extensions",
   "type": "module",
   "main": "src/index.js",
   "types": "src/index.d.ts",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/INCHMAN1900/universal-selection.git"
+  },
+  "bugs": {
+    "url": "https://github.com/INCHMAN1900/universal-selection/issues"
+  },
+  "homepage": "https://github.com/INCHMAN1900/universal-selection#readme",
   "exports": {
     ".": {
       "types": "./src/index.d.ts",
