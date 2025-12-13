@@ -6,7 +6,7 @@ import { runAppleScript } from "@raycast/utils";
  * Uses AppleScript to retrieve selected files from Bloom and converts
  * file URLs to POSIX paths.
  * 
- * @returns {Promise<string[]>} Array of absolute file paths selected in Bloom
+ * @returns {Promise<import("@raycast/api").FileSystemItem[]>} Array of file system items
  */
 export async function getBloomSelection() {
   const script = `
@@ -32,5 +32,5 @@ export async function getBloomSelection() {
     return [];
   }
 
-  return result.trim().split("\n");
+  return result.trim().split("\n").map(path => ({ path }));
 }

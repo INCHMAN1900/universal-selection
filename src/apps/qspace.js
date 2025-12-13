@@ -6,7 +6,7 @@ import { runAppleScript } from "@raycast/utils";
  * Uses AppleScript to retrieve selected items from QSpace/QSpace Pro.
  * 
  * @param {string} appName - The name of the application ("QSpace" or "QSpace Pro")
- * @returns {Promise<string[]>} Array of absolute file paths selected in QSpace
+ * @returns {Promise<import("@raycast/api").FileSystemItem[]>} Array of file system items
  */
 export async function getQSpaceSelection(appName = "QSpace Pro") {
   const script = `
@@ -33,7 +33,7 @@ export async function getQSpaceSelection(appName = "QSpace Pro") {
   }
 
   // Convert file:// URLs to POSIX paths
-  return result.trim().split("\n").map(url => {
-    return decodeURIComponent(url.replace(/^file:\/\//, ""));
-  });
+  return result.trim().split("\n").map(url => ({
+    path: decodeURIComponent(url.replace(/^file:\/\//, ""))
+  }));
 }

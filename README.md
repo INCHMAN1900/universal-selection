@@ -6,6 +6,7 @@ A universal file selection getter for Raycast extensions. Automatically detects 
 
 - Support for multiple file managers
 - Easy integration with Raycast extensions
+- Compatible with Raycast's `getSelectedFinderItems` API
 
 ## Installation
 
@@ -31,9 +32,13 @@ export default async function Command() {
       return;
     }
 
-    // Process your files
+    // Process your files - same format as getSelectedFinderItems
     console.log("Selected files:", files);
-    // ["/Users/username/Documents/file.txt", "/Users/username/Pictures/image.png"]
+    // [{ path: "/Users/username/Documents/file.txt" }, { path: "/Users/username/Pictures/image.png" }]
+    
+    files.forEach(file => {
+      console.log(`Processing: ${file.path}`);
+    });
     
   } catch (error) {
     await showToast({
@@ -49,13 +54,22 @@ export default async function Command() {
 
 ### `getSelectedFiles()`
 
-Returns a promise that resolves to an array of selected file paths.
+Returns a promise that resolves to an array of file system items.
 
-**Returns:** `Promise<string[]>`
+**Returns:** `Promise<Array<{ path: string }>>`
 
 **Throws:**
 - `Error` - If the frontmost application bundle ID cannot be determined
 - `Error` - If the frontmost application is not supported
+
+**Example:**
+```javascript
+const files = await getSelectedFiles();
+// [{ path: "/path/to/file1.txt" }, { path: "/path/to/file2.png" }]
+
+// Access file paths
+files.forEach(file => console.log(file.path));
+```
 
 ## Supported Applications
 

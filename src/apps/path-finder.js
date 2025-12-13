@@ -5,7 +5,7 @@ import { runAppleScript } from "@raycast/utils";
  * 
  * Uses AppleScript to retrieve selected items from Path Finder.
  * 
- * @returns {Promise<string[]>} Array of absolute file paths selected in Path Finder
+ * @returns {Promise<import("@raycast/api").FileSystemItem[]>} Array of file system items
  */
 export async function getPathFinderSelection() {
   const script = `
@@ -31,5 +31,5 @@ export async function getPathFinderSelection() {
     return [];
   }
 
-  return result.trim().split("\n");
+  return result.trim().split("\n").map(path => ({ path }));
 }

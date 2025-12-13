@@ -5,9 +5,8 @@ import { getSelectedFinderItems } from "@raycast/api";
  * 
  * Uses Raycast's native API to retrieve selected items from Finder.
  * 
- * @returns {Promise<string[]>} Array of absolute file paths selected in Finder
+ * @returns {Promise<import("@raycast/api").FileSystemItem[]>} Array of file system items
  */
 export async function getFinderSelection() {
-  const items = await getSelectedFinderItems();
-  return items.map(item => item.path);
+  return await getSelectedFinderItems();
 }

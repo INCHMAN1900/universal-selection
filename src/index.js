@@ -8,14 +8,15 @@ import { getPathFinderSelection } from "./apps/path-finder.js";
  * Get selected files from the frontmost file manager application.
  * 
  * Automatically detects the active file manager and retrieves the selected files.
+ * Returns FileSystemItem[] compatible with Raycast's getSelectedFinderItems.
  * 
- * @returns {Promise<string[]>} Array of absolute file paths
+ * @returns {Promise<import("@raycast/api").FileSystemItem[]>} Array of file system items
  * @throws {Error} If the application bundle ID cannot be determined
  * @throws {Error} If the frontmost application is not supported
  * 
  * @example
  * const files = await getSelectedFiles();
- * console.log(files); // ["/Users/username/Documents/file.txt"]
+ * console.log(files); // [{ path: "/Users/username/Documents/file.txt" }]
  */
 export async function getSelectedFiles() {
   const app = await getFrontmostApplication();
