@@ -1,6 +1,6 @@
 {
   "name": "universal-selection",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "Universal file selection getter for Raycast extensions",
   "type": "module",
   "main": "src/index.js",
